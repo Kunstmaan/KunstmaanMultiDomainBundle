@@ -14,9 +14,6 @@ class HostOverrideListenerTest extends TestCase
      */
     protected $object;
 
-    /**
-     * @var
-     */
     protected $session;
 
     /**
@@ -137,11 +134,11 @@ class HostOverrideListenerTest extends TestCase
         $translator->method('trans')
             ->willReturnArgument(0);
 
-        $adminRouteReturnValueMap = array(
-            array('/nl/admin/preview/some-uri', false),
-            array('/nl/some-uri', false),
-            array('/nl/admin/some-admin-uri', true),
-        );
+        $adminRouteReturnValueMap = [
+            ['/nl/admin/preview/some-uri', false],
+            ['/nl/some-uri', false],
+            ['/nl/admin/some-admin-uri', true],
+        ];
 
         $adminRouteHelper = $this->getMockBuilder('Kunstmaan\AdminBundle\Helper\AdminRouteHelper')
             ->disableOriginalConstructor()
